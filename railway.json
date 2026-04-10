@@ -1,5 +1,11 @@
 {
+  "build": {
+    "builder": "NIXPACKS",
+    "nixpacksConfigPath": "nixpacks.toml"
+  },
   "deploy": {
-    "startCommand": "python -m apps.alert_worker.main"
+    "startCommand": "PYTHONPATH=/app python -m apps.alert_worker.main",
+    "healthcheckPath": "/health",
+    "restartPolicyType": "ON_FAILURE"
   }
 }

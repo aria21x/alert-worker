@@ -1,6 +1,16 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+class Settings:
+    """Dynamic settings loader"""
+    def __getattr__(self, name):
+        return os.getenv(name)
+
+settings = Settings()
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file='.env', extra='ignore')

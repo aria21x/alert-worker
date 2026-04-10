@@ -1,11 +1,8 @@
 [phases.setup]
-nixPkgs = ["python312", "postgresql", "redis"]
+nixPkgs = ["python312", "python312Packages.pip"]
 
 [phases.install]
 cmds = ["pip install -r requirements.txt"]
-
-[phases.build]
-cmds = ["echo 'Building alert-worker'"]
 
 [start]
 cmd = "python -m apps.alert_worker.main"

@@ -1,0 +1,12 @@
+{
+  "ExampleCexHotWallet111111111111111111111111111": {
+    "label": "Example CEX Hot Wallet",
+    "type": "cex",
+    "confidence": 0.95
+  },
+  "ExampleBridgeWallet111111111111111111111111111": {
+    "label": "Example Bridge Wallet",
+    "type": "bridge",
+    "confidence": 0.92
+  }
+}
